@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome - biblioteca de icones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Galeria Sass</title>
+</head>
+
+<body>
+
+    <!-- 
+        AULÃO DE SASS
+
+            Primeiro passo - instalar o Sass globalmente na maquina.
+
+            usamos o npm install -g sass
+            
+            Sass é um pré processador de css usado para agilizar a criação de paginas 
+            existe duas extensões: .scss e .sass
+            usaremos a extensão .sass
+
+            dentro do head colocamos o link de stylesheet com href de css/styles.css
+            esse arquivo é criado automaticamente pelo Sass.
+        
+        Segundo passo - Criamos a pasta sass e dentro da pasta o styles.sass
+
+        Terceiro passo - Criar a estrutura HTML do SITE
+
+    -->
+
+    <header class="header">
+        <a href="" class="header-brand">Galeria Sass</a>
+        <nav class="header-navbar">
+            <ul>
+                <li>
+                    <a href="#" class="active">Home</a>
+                </li>
+                <li>
+                    <a href="#">Fotos</a>
+                </li>
+                <li>
+                    <a href="#">Serviços</a>
+                </li>
+                <li>
+                    <a href="#">Sobre</a>
+                </li>
+                <li>
+                    <a href="#">Contatos</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header-social-media">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main class="galery">
+        <div class="galery-card" id="card-1">
+            <h2 class="galery-card-title">Animals</h2>
+            <a href="" class="galery-card-btn">Mais fotos</a>
+        </div>
+        <div class="galery-card" id="card-2">
+            <h2 class="galery-card-title">Arquitetura</h2>
+            <a href="" class="galery-card-btn">Mais fotos</a>
+        </div>
+        <div class="galery-card" id="card-3">
+            <h2 class="galery-card-title">Cidades</h2>
+            <a href="" class="galery-card-btn">Mais fotos</a>
+        </div>
+        <div class="galery-card" id="card-4">
+            <h2 class="galery-card-title">Decorações</h2>
+            <a href="" class="galery-card-btn">Mais fotos</a>
+        </div>
+        <div class="galery-card" id="card-5">
+            <h2 class="galery-card-title">Esportes</h2>
+            <a href="" class="galery-card-btn">Mais fotos</a>
+        </div>
+        <div class="galery-card" id="card-6">
+            <h2 class="galery-card-title">Natureza</h2>
+            <a href="" class="galery-card-btn">Mais fotos</a>
+        </div>
+        <div class="galery-card" id="card-7">
+            <h2 class="galery-card-title">Paisagem</h2>
+            <a href="" class="galery-card-btn">Mais fotos</a>
+        </div>
+        <div class="galery-card" id="card-8">
+            <h2 class="galery-card-title">Pessoas</h2>
+            <a href="" class="galery-card-btn">Mais fotos</a>
+        </div>
+        <div class="galery-card" id="card-9">
+            <h2 class="galery-card-title">Refeições</h2>
+            <a href="" class="galery-card-btn">Mais fotos</a>
+        </div>
+    </main>
+    <footer>
+        <p><span>Galeria Sass</span> &copy; 2023</p>
+    </footer>
+</body>
+
+</html>

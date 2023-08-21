@@ -1,0 +1,157 @@
+// para criar estilização no sass é bem diferente colocamos o elemento e abaixo dele
+// a estilização que queremos. usamos o comando sass --watch sass/nomeDoArquivo:css/styles.css para executar o codigo
+//o sass vai gerar uma pasta css e um arquivo css.
+// em nosso projeto usaremos: sass --watch sass/styles.sass:css/styles.css
+
+// podemos usar variáveis no Sass, criamos o arquivo _variables.sass
+// para importar as variáveis podemos usar o @use
+// o @ é usado para chamar as funções do sass
+// no sass não é preciso usar o _ e nem a extensão do arquivo, apenas o nome da 
+// variável.
+
+// Nesting - aninhar é o ato de você alinhar e organizar o código ali na sua tela,
+//e o Sass trás esse aninhamento de forma a facilitar a sua visão sobre o código.
+
+// adicionando mixins ao projeto. primeiro importando usando o @use, depois o nome do arquivo
+// segundo usamos o @include para incluir o mixin no elemento desejado
+
+@use 'variables'
+@use 'mixins'
+
+// RESET DA PAGINA
+*
+    font-family: 'Josefin Sans'
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    background-color: variables.$bg-color
+    color: variables.$text-color
+
+    a
+        color: variables.$text-color
+        text-decoration: none
+        transition: .6s
+
+    ul
+        list-style: none
+
+// HEADER CONFIG
+
+.header
+    display: flex
+    justify-content: space-between
+    @include mixins.container
+    @include mixins.mobile
+        padding: 1.1rem
+
+    &-brand // igual a .header-brand adicionar estilização ao elemento filho, no nosso caso a brand ou logo do site
+        color: variables.$secondary-color
+        font-size: 2rem
+        @include mixins.mobile
+            font-size: 2rem
+
+    &-navbar // igual a .header-navbar, adiciona estilo a navegação
+        ul
+            height: 100%
+            @include mixins.flex-center
+            @include mixins.mobile
+                display: none
+
+        li
+            margin: 0 1rem
+            text-transform: uppercase
+            font-size: .8rem
+        .active
+            color: variables.$secondary-color
+
+        a
+            &:hover
+                color: variables.$secondary-color
+
+    &-social-media
+        ul
+            @include mixins.flex-center
+            height: 100%
+            @include mixins.mobile
+                display: none
+
+        li
+            margin: 0 1rem
+        a
+            &:hover
+                color: variables.$primary-color
+
+.galery
+    @include mixins.container
+    @include mixins.flex-center
+    flex-wrap: wrap
+    justify-content: space-between
+    padding: 0
+
+    @include mixins.mobile
+        flex-direction: column
+
+    &-card // adiciona estilo ao card
+        width: 31%
+        height: 400px
+        margin-bottom: 4%
+        @include mixins.flex-center
+        flex-direction: column
+        color: variables.$primary-color
+
+        @include mixins.mobile
+            width: 90%
+            margin-bottom: 6%
+
+        &-title // adiciona estilo no titulo do card
+            font-size: 2rem
+            font-weight: 300
+            margin-bottom: 1rem
+        &-btn // adiciona estilo ao botão dentro do card  
+            padding: .6rem 2rem
+            border: 2px solid variables.$primary-color
+            color: variables.$primary-color
+            font-weight: 400
+            text-transform: uppercase
+            letter-spacing: 1px
+            &:hover
+                background-color: variables.$primary-color 
+                color: variables.$bg-color
+
+    #card-1
+        @include mixins.bg-img('animais.jpg')
+
+    #card-2
+        @include mixins.bg-img('arquitetura.jpg')
+
+    #card-3
+        @include mixins.bg-img('cidade.jpg')
+
+    #card-4
+        @include mixins.bg-img('decoracao.jpg')
+
+    #card-5
+        @include mixins.bg-img('esportes.jpg')
+
+    #card-6
+        @include mixins.bg-img('natureza.jpg')
+
+    #card-7
+        @include mixins.bg-img('paisagem.jpg')
+
+    #card-8
+        @include mixins.bg-img('pessoas.jpg')
+
+    #card-9
+        @include mixins.bg-img('refeicoes.jpg')
+            
+footer
+    text-align: center
+    padding-bottom: 2rem
+
+    span
+        color: variables.$secondary-color
+        font-weight: bold
+

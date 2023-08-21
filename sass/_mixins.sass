@@ -1,0 +1,39 @@
+// Mixins são blocos de código que podem ser reutilizados a qualquer momento
+// no seu CSS. Funcionam mais ou menos como variáveis, porém você pode colocar 
+// muito mais dentro de um mixin e ainda passar parâmetros.
+
+// os mixins se asemelham aos componentes do React usando styled-components
+
+
+@use 'variables'
+
+@mixin container
+    max-width: variables.$container-width
+    padding: 1.5rem 0
+    margin: 0 auto
+    
+
+@mixin flex-center
+    display: flex
+    align-items: center
+    justify-content: center
+    
+// adicionando valores dinamicos aos mixins
+@mixin bg-img($img)
+    background-image: url('../img/#{$img}')
+    background-size: 100%
+    background-position: center
+    background-repeat: no-repeat
+    filter: grayscale(100%)
+    transition: .6s
+
+    &:hover
+        filter: grayscale(0%)
+        background-size: 110%
+        background-image: linear-gradient(rgba(0, 0, 0, .50), rgba(0, 0, 0, .50)), url('../img/#{$img}')
+
+    // Mixin de responsividade -> criamos o mixin definimos a largura e adicionamos
+    // o @content
+@mixin mobile
+    @media(max-width: 425px)
+        @content
